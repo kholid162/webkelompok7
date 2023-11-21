@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Pelanggan - KELOMPOK 7</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Update Data KARYAWAN</h2>
+        <form method="POST" action="" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="nama" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="nama" name="nama" value="{{ anggota.nama }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="kelas" class="form-label">Kelas</label>
+                <input type="text" class="form-control" id="kelas" name="kelas" value="{{ anggota.kelas }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="jabatan" class="form-label">Jabatan</label>
+                <input type="text" class="form-control" id="jabatan" name="jabatan" value="{{ anggota.jabatan }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="foto_profil" class="form-label">Upload Foto Profil</label>
+                <input type="file" class="form-control" id="foto_profil" name="foto_profil">
+                {% if anggota.foto_profil %}
+                    <img src="{{ url_for('static', filename=anggota.foto_profil) }}" alt="Current Profile Picture" style="max-width: 300px; margin-top: 10px;">
+                {% endif %}
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+
+    <!--jsscript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
