@@ -1,0 +1,7 @@
+requests
+flask
+Flask-SQLAlchemy
+pip
+pyodbc
+SQLAlchemy
+Werkzeug
